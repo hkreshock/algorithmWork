@@ -137,12 +137,6 @@ console.log(findTheWinner(
 // Expect 1
 
 console.log(findTheWinner(
-    [ [ 'anything', 'apple' ], [ 'banana', 'anything', 'banana' ] ],
-    [ 'orange', 'grapes', 'apple', 'orange', 'orange', 'banana', 'apple', 'banana', 'banana' ]
-));
-// Expect 1
-
-console.log(findTheWinner(
     [ [ 'apple', 'orange' ], [ 'orange', 'banana', 'orange' ] ],
     [ 'apple', 'orange', 'banana', 'orange', 'orange', 'banana', 'orange', 'grape' ]
 ));
@@ -151,6 +145,12 @@ console.log(findTheWinner(
 console.log(findTheWinner(
     [ [ 'anything', 'anything', 'anything', 'apple' ], [ 'banana', 'anything', 'banana' ] ],
     [ 'orange', 'apple', 'banana', 'orange', 'apple', 'orange', 'orange', 'banana', 'apple', 'banana' ]
+));
+// Expect 1
+
+console.log(findTheWinner(
+    [ [ 'anything', 'apple' ], [ 'banana', 'anything', 'banana' ] ],
+    [ 'orange', 'grapes', 'apple', 'orange', 'orange', 'banana', 'apple', 'banana', 'banana' ]
 ));
 // Expect 1
 
