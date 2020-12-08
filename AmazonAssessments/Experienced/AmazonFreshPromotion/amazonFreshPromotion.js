@@ -39,63 +39,6 @@
         // the codeList is also maintained in the shoppingCart
 
 function findTheWinner (codeList, shoppingCart) {
-    // set result to 0 because you can assume most times the customer won't win
-    let result = 0;
-    // log how many arrays from the codeList are lined up
-    let groupsInOrder = 0;
-    // grab all relevant strings that "anything" could be
-    
-    const possibleAnythingOptions = [...new Set(shoppingCart)];
-    let stringCart = shoppingCart.toString();
-    let holdCartString = JSON.parse(JSON.stringify(shoppingCart)).toString();
-
-    for (let index = 0; index < codeList.length; index++) {
-
-        const array = codeList[index];
-        const holdArrayString = JSON.parse(JSON.stringify(array)).toString();
-
-        if (stringCart) {
-            if (array.toString().includes('anything')) {
-                let anythingBool = false;
-                let newString = stringCart;
-
-                for (let index = 0; index < possibleAnythingOptions.length; index++) {
-                    if (!anythingBool) {
-                        const anythingString = possibleAnythingOptions[index];
-                        if (holdCartString.includes(holdArrayString.replace('anything', anythingString))) {
-                            // if the codeList array is included, remove the codeList array piece from the shopping list and anything before it
-                            const sliceIndex = holdCartString.indexOf(holdArrayString.replace('anything', anythingString));
-                            const slicedString = holdCartString.slice(sliceIndex, holdCartString.length);
-
-                            newString = slicedString.replace(slicedString.replace('anything', anythingString), '');
-                            anythingBool = true; // updated boolean so the function knows that a replaced "anything" value checked out
-                        }
-                    }
-                }
-                if (anythingBool) {
-                    stringCart = newString;
-                    groupsInOrder += 1;
-                }
-            } else {
-                if (stringCart.includes(holdArrayString)) {
-                    holdCartString = JSON.parse(JSON.stringify(shoppingCart)).toString();
-                    // if the codeList array is included, remove the codeList array piece from the shopping list and anything before it
-                    const sliceIndex = holdCartString.indexOf(holdArrayString);
-                    const slicedString = holdCartString.slice(sliceIndex, holdCartString.length);
-                    
-                    newString = slicedString.replace(array.toString(), '');
-                    stringCart = newString.replace(',,', ',');
-                    groupsInOrder += 1;
-                }
-            }
-        }
-    };
-    // check to see if all the arrays checked out, if so then we have a winner
-    if (groupsInOrder === codeList.length) {
-        result = 1;
-    }
-
-    return result;
 }
 
 // TEST CASES
