@@ -50,7 +50,6 @@ function findTheWinner (codeList, shoppingCart) {
     let holdCartString = JSON.parse(JSON.stringify(shoppingCart)).toString();
 
     for (let index = 0; index < codeList.length; index++) {
-
         const array = codeList[index];
         const holdArrayString = JSON.parse(JSON.stringify(array)).toString();
 
