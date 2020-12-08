@@ -1,11 +1,11 @@
 {
   "name": "algorithmwork",
   "version": "1.0.0",
-  "description": "",
+  "description": "Coding challenges from https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Hunter Kreshock",
   "license": "ISC"
 }
